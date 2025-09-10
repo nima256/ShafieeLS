@@ -1,5 +1,3 @@
-## 🎓 ShafieeLS — README draft
-
 # 🎓 ShafieeLS
 
 **Full-stack institute management system**  
