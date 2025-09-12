@@ -26,7 +26,7 @@ const expressError = require('./errorHandelers/expressError');
 const adminRouter = require('./adminRouter');
 
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.dburl)
+mongoose.connect(process.env.dburl || "mongodb://localhost:27017/shafieels")
     .then(() => {
         console.log('mongo connection open');
     })
@@ -37,14 +37,14 @@ mongoose.connect(process.env.dburl)
 
 const sessionConfig = {
     name: 'session',
-    secret: process.env.sessionSecret,
+    secret: process.env.sessionSecret || "sessionsecretforbasic",
     resave: true,
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000 // 24 hours
     },
-    store: MongoStore.create({ mongoUrl: process.env.dburl })
+    store: MongoStore.create({ mongoUrl: process.env.dburl || "mongodb://localhost:27017/shafieels" })
 }
 
 app.use(session(sessionConfig));
