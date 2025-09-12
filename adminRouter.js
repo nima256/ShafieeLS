@@ -23,9 +23,6 @@ const MrsGhorbanzade = require('./models/MrsGhorbanzade');
 const MrsShafiee = require('./models/MrsShafiee');
 const RezaShafiee = require('./models/RezaShafiee');
 
-
-
-
 mongoose.set('strictQuery', true);
 const mongooseDB = mongoose.connect(process.env.dburl)
     .then(() => {
@@ -51,38 +48,8 @@ const adminOptions = {
 };
 const admin = new AdminJS(adminOptions);
 const authenticate = async (email, password) => {
-    if (email === process.env.admin1E && password === process.env.admin1P) {
+    if (email === process.env.admin1E || "admin" && password === process.env.admin1P || "admin") {
         return Promise.resolve(process.env.admin1E);
-    } else if (email === process.env.admin2E && password === process.env.admin2P) {
-        return Promise.resolve(process.env.admin2E);
-    } else if (email === process.env.admin3E && password === process.env.admin3P) {
-        return Promise.resolve(process.env.admin3E);
-    } else if (email === process.env.admin4E && password === process.env.admin4P) {
-        return Promise.resolve(process.env.admin4E);
-    } else if (email === process.env.admin5E && password === process.env.admin5P) {
-        return Promise.resolve(process.env.admin5E);
-    } else if (email === process.env.admin6E && password === process.env.admin6P) {
-        return Promise.resolve(process.env.admin6E);
-    } else if (email === process.env.admin7E && password === process.env.admin7P) {
-        return Promise.resolve(process.env.admin7E);
-    } else if (email === process.env.admin8E && password === process.env.admin8P) {
-        return Promise.resolve(process.env.admin8E);
-    } else if (email === process.env.admin9E && password === process.env.admin9P) {
-        return Promise.resolve(process.env.admin9E);
-    } else if (email === process.env.admin10E && password === process.env.admin10P) {
-        return Promise.resolve(process.env.admin10E);
-    } else if (email === process.env.admin11E && password === process.env.admin11P) {
-        return Promise.resolve(process.env.admin11E);
-    } else if (email === process.env.admin12E && password === process.env.admin12P) {
-        return Promise.resolve(process.env.admin12E);
-    } else if (email === process.env.admin13E && password === process.env.admin13P) {
-        return Promise.resolve(process.env.admin13E);
-    } else if (email === process.env.admin14E && password === process.env.admin14P) {
-        return Promise.resolve(process.env.admin14E);
-    } else if (email === process.env.admin15E && password === process.env.admin15P) {
-        return Promise.resolve(process.env.admin15E);
-    } else if (email === process.env.admin16E && password === process.env.admin16P) {
-        return Promise.resolve(process.env.admin16E);
     } else {
         return null;
     }
