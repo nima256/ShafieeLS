@@ -21,6 +21,14 @@ Built with **Node.js, Express, and MongoDB**, ShafieeLS provides teachers and st
 
 ---
 
+---
+
+## 📸 Demo
+
+![shafieels Demo](shafieels-demo.gif)
+
+---
+
 ## ⚙️ Installation
 ```bash
 # clone the repo
